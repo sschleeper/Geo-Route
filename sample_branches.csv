@@ -1,0 +1,11 @@
+Branch Name,Branch Code,Address,City,State,Zip Code,Phone,After Hours Phone,Latitude,Longitude
+Downtown LA,LA001,123 Main St,Los Angeles,California,90012,123-456-7890,123-456-7899,34.0522,-118.2437
+San Francisco,SF001,456 Market St,San Francisco,California,94105,234-567-8901,234-567-8999,37.7749,-122.4194
+Chicago Loop,CH001,789 Michigan Ave,Chicago,Illinois,60601,345-678-9012,345-678-9099,41.8781,-87.6298
+Manhattan,NY001,100 Broadway,New York,New York,10006,456-789-0123,456-789-0199,40.7128,-74.0060
+Miami Beach,MI001,200 Ocean Dr,Miami,Florida,33139,567-890-1234,567-890-1299,25.7617,-80.1918
+Seattle,SE001,300 Pike St,Seattle,Washington,98101,678-901-2345,678-901-2399,47.6062,-122.3321
+Dallas,DA001,400 Main St,Dallas,Texas,75201,789-012-3456,789-012-3499,32.7767,-96.7970
+Denver,DE001,500 16th St,Denver,Colorado,80202,890-123-4567,890-123-4599,39.7392,-104.9903
+Atlanta,AT001,600 Peachtree St,Atlanta,Georgia,30308,901-234-5678,901-234-5699,33.7490,-84.3880
+Phoenix,PH001,700 Central Ave,Phoenix,Arizona,85004,012-345-6789,012-345-6799,33.4484,-112.0740 

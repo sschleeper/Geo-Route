@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gen Rent Geo-Routing</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        .upload-section, .results-section {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        .btn:disabled {
+            background-color: #95a5a6;
+            cursor: not-allowed;
+        }
+        #resultsTable {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        #resultsTable th, #resultsTable td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        #resultsTable th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        #resultsTable tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        .progress {
+            margin-top: 10px;
+            font-style: italic;
+            color: #3498db;
+        }
+        #downloadBtn {
+            margin-top: 10px;
+            background-color: #27ae60;
+        }
+        #downloadBtn:hover {
+            background-color: #2ecc71;
+        }
+        .info-box {
+            background-color: #e8f4f8;
+            padding: 10px;
+            border-left: 5px solid #3498db;
+            margin-bottom: 15px;
+        }
+        #debugInfo {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 14px;
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+            display: none;
+        }
+        #toggleDebug {
+            margin-top: 10px;
+            background-color: #95a5a6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Gen Rent Geo-Routing Tool</h1>
+        
+        <div class="info-box">
+            <p>This tool helps match US area codes to the nearest Gen Rent branch location based on geographical distance.</p>
+            <p>Upload your branch locations CSV file with latitude and longitude coordinates to get started.</p>
+        </div>
+        
+        <div class="upload-section">
+            <h2>Step 1: Upload Branch Locations</h2>
+            <p>Upload a CSV file containing branch locations with required information.</p>
+            <p><strong>Required CSV columns:</strong> Branch Name, Latitude, Longitude</p>
+            <p><strong>Additional useful columns:</strong> Branch Code, Address, City, State</p>
+            
+            <input type="file" id="branchFileInput" accept=".csv" />
+            <button id="uploadBtn" class="btn">Upload and Process</button>
+            <div id="uploadStatus" class="status"></div>
+        </div>
+        
+        <div class="results-section">
+            <h2>Step 2: View and Download Results</h2>
+            <div id="progressStatus" class="progress"></div>
+            <button id="downloadBtn" class="btn" disabled>Download Results</button>
+            
+            <div id="resultsContainer">
+                <h3>Area Code to Branch Mapping</h3>
+                <table id="resultsTable">
+                    <thead>
+                        <tr>
+                            <th>Area Code</th>
+                            <th>Nearest Branch</th>
+                            <th>Distance (miles)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resultsBody">
+                        <!-- Results will be inserted here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <button id="toggleDebug" class="btn">Show Debug Info</button>
+        <div id="debugInfo"></div>
+    </div>
+    
+    <script src="areacodes.js"></script>
+    <script src="app.js"></script>
+</body>
+</html> 
